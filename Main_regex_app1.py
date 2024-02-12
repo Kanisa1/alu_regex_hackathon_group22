@@ -15,7 +15,7 @@ class RegexValidation:
 
     def songs(self):
          #below
-        pattern = r"insert your song regex pattern here"
+        pattern = r'^\[Verse/\d+].+$'
         songs = re.findall(pattern, self.validation)
         if songs is None or len(songs) == 0:
             raise FileNotFoundError("None of these match")
