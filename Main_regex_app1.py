@@ -6,7 +6,7 @@ class RegexValidation:
 
     def movie_titles(self):
         #Movie titles
-        pattern = r"insert your movie title regex pattern here"
+        pattern = r"^[a-zA-Z]+(\d{4})$ if only letters are needed else:^[^\d]+(\d{4})$"
         movies = re.findall(pattern, self.validation)
         if movies is None or len(movies) == 0:
             raise FileNotFoundError("None of these match")
@@ -33,7 +33,7 @@ class RegexValidation:
 
     def isbn(self):
          #ISBN
-        pattern = r"insert your ISBN regex pattern here"
+        pattern = r"^ISBN\s[0-9]{3}[-][0-9]{1}[-][0-9]{3}[-][0-9]{5}[-]{0-9]{1}"
         isbns = re.findall(pattern, self.validation)
         if isbns is None or len(isbns) == 0:
             raise FileNotFoundError("None of these match")
@@ -42,7 +42,7 @@ class RegexValidation:
 
     def jokes(self):
          #Jokes
-        pattern = r"insert your joke regex pattern here"
+        pattern = r"^Why did the .+\?Because.+"
         joke = re.findall(pattern, self.validation)
         if joke is None or len(joke) == 0:
             raise FileNotFoundError("None of these match")
