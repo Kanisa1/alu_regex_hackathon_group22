@@ -24,7 +24,7 @@ class RegexValidation:
 
     def twitter(self):
          #below
-        pattern = r"insert your Twitter username regex pattern here"
+        pattern = r'^@[a-zA-Z0-9]+$'
         usernames = re.findall(pattern, self.validation)
         if usernames is None or len(usernames) == 0:
             raise FileNotFoundError("None of these match")
