@@ -51,8 +51,8 @@ class RegexValidation:
 
     def tv(self):
          #TV Episodes
-        pattern = r"insert your TV episode regex pattern here"
-        episodes = re.findall(pattern, self.validation)
+        pattern = r"^.+ S[0-9]{2}E[0-9]{2}: .+"
+        episodes[0-31]-[a-zA-Z]{3}-[0-9]{4} = re.findall(pattern, self.validation)
         if episodes is None or len(episodes) == 0:
             raise FileNotFoundError("None of these match")
         else:
@@ -60,7 +60,7 @@ class RegexValidation:
 
     def dates(self):
          #Weird Dates
-        pattern = r"insert your date regex pattern here"
+        pattern = r"[0-31]-[a-zA-Z]{3}-[0-9]{4}"
         dates = re.findall(pattern, self.validation)
         if dates is None or len(dates) == 0:
             raise FileNotFoundError("None of these match")
@@ -116,3 +116,5 @@ if __name__ == "__main__":
         rg.hex()
     elif question == 'ip':
         rg.ip()
+
+
